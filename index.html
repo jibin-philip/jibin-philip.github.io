@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Jibin Philip - Resume</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript">
+    const ONE_DAY = 1000 * 60 * 60 * 24;
+    const date1 = new Date(2021,2,11);
+    const date2 = Date.now();
+    const differenceMs = Math.abs(date1 - date2);
+    var tdays = Math.round(differenceMs/ONE_DAY);
+    var years = Math.round(tdays/364.25);
+    tdays=tdays-(years*364.25);
+    var months = Math.round(tdays/30.416);
+    var str = "A Motivated and Certified RPA Developer (UiARD) , expertised in UiPath with an Overall Experience of "+years+" Years and "+months+" Months. I also have experience in .Net and ASP .Net MVC. I am a B.Tech graduate Specialised in Electrical and Electronics Engineering. Scroll Down to Know more about me";
+    var str2="UiPath Certified Professional is a high-stakes certification program designed to help a developer to advance his/her career in robotic process automation (RPA) solutions across industries. Gets globally recognized RPA credentials that strengthen your professional standing and increase your job efficiency and satisfaction.";
+    var i=0;
+    var elem = document.getElementById("me");  
+    var pos = -50; 
+
+    function codeAddress() {
+      if(i==0)
+      {
+        
+        setTimeout(frame,20);
+      }
+      
+      if (i < str.length || i< str2.length) {
+    document.getElementById("objective").innerHTML += str.charAt(i);
+    document.getElementById("uiard_test").innerHTML += str2.charAt(i);
+    i++;
+    if(i>=str.length){
+      document.getElementById("objective").innerHTML = str+"_";
+    }
+    setTimeout(codeAddress, 50);
+  }
+  else
+  {
+    document.getElementById("objective").innerHTML = str;
+    if(i>=str2.length){
+     setTimeout(blink, 200);
+    }
+  }
+    }
+    function blink(){
+      document.getElementById("objective").innerHTML = str+"_";
+      setTimeout(codeAddress, 200);
+    }
+    function frame(){
+     if(pos==0)
+     {
+
+     }
+     else
+     {
+      pos=pos+1;
+      var element = document.getElementById("me"); 
+      element.style.marginRight = pos + 'vw';  
+      setTimeout(frame,20);
+     }
+    }
+    function sizeup(objButton)
+    {
+      objButton.style="width:7vw;height:fit-content; margin-left: 10vw;border-color:white;";
+      
+    }
+    function sizedown(objButton)
+    {
+      objButton.style="width:7vw;height:fit-content; margin-left: 10vw;";
+    }
+
+    function openModel(objButton)
+    {
+      var title=document.getElementsByClassName("modal-title");
+      switch(objButton.innerHTML) {
+  case "UiPath Certified Professional RPA Developer":
+    document.getElementById("certifcatename").innerText =objButton.innerHTML;
+    document.getElementById("certificateimg").src="images/cert1.png";
+    break;
+  case " Diploma in UiPath Advanced RPA Developer":
+    document.getElementById("certifcatename").innerText = objButton.innerHTML;
+    document.getElementById("certificateimg").src="images/cert1.png";
+    break;
+  case " Diploma in UiPath RPA Developer Foundation":
+    document.getElementById("certifcatename").innerText = objButton.innerHTML;
+    document.getElementById("certificateimg").src="images/cert1.png";
+    break;
+  case " Diploma in UiPath RPA Solution Architect":
+    document.getElementById("certifcatename").innerText = objButton.innerHTML;
+    document.getElementById("certificateimg").src="images/cert1.png";
+    break;
+    case " CareRevenue Special Recognition":
+    document.getElementById("certifcatename").innerText = objButton.innerHTML;
+    document.getElementById("certificateimg").src="images/cert1.png";
+    break;
+  default:
+    // code block
+}
+      $('#PopUp').modal('show');
+    }
+    function closeModel()
+    {
+      $('#PopUp').modal('hide');
+    }
+    $(document).on("mouseenter", ".tech", function (event) {
+        $(this).css({
+            "box-shadow": "4px 5px #5f6368"
+        });
+      });
+    $(document).on("mouseleave", ".tech", function () {
+        $(this).css({
+            "box-shadow": ""
+        });
+      });  
+    function showexp(objButton){
+      switch(objButton) 
+      {
+        case "carerevenue":
+               $('#expPopcarerevenue').modal('show');
+           break;
+        case "tcs":
+               $('#expPoptcs').modal('show');
+           break;
+      }
+      document.getElementById("exp_info").style="background-color:#111111;visibility:visible"
+    }
+    function hideexp(){
+      $('#expPopcarerevenue').modal('hide');
+      $('#expPoptcs').modal('hide');
+    }
+    function moreinfo(){
+      var text="After my graduation, I got selected in TCS / Tata Consulatncy Services , which is one of theTop level- IT companies india and plays a vital role in taking plays project from different companies across the world. I got selected into a  RPA project for an american airways company and It was the beginning of my Automation carrier.";
+      document.getElementById("more").innerHTML=text;
+    }
+    function showaboutme(){
+      $('#aboutme').modal('show');
+    }
+    function hideaboutme(){
+      $('#aboutme').modal('hide');
+    }
+    function tocertifications(){
+      document.getElementById("certifications").scrollIntoView();
+    }
+    function totech(){
+      document.getElementById("technical_knowledge").scrollIntoView();
+    }
+    function toexperience(){
+      document.getElementById("experience").scrollIntoView();
+    }
+    function toeducation(){
+      document.getElementById("education").scrollIntoView();
+    }
+    function toprojects(){
+      document.getElementById("projects").scrollIntoView();
+    }
+    function toskills(){
+      document.getElementById("skills").scrollIntoView();
+    }
+    </script>
+    <style>
+      .cert{
+        text-align: left;
+         border: #111111;
+         margin-bottom: 5px;
+         background-color: #4d4d4d;
+         border-color: #be3d3d;
+      }
+      #uiard{
+          background-image: linear-gradient(to right,#cb9a14, #edbd2e);
+          border: #ffffff;
+          border-color: #ffffff;
+      }
+      .tech{
+          margin-inline:1vw;
+          text-align: center;
+          vertical-align: middle;
+          line-height: 8vh;
+          border-radius: 10px;
+          max-width: 100%;
+          max-height: 10vh;
+          margin-top: 2vh;
+      }
+      #uiard_test{
+          margin-left: 2%;
+      }
+      .exp
+      {
+        flex:unset;
+        display: inline-block;
+        padding-top: 0%;       
+        border-radius: 10px;
+        background-color: #111111;
+        text-align: center;
+        width: auto;
+        max-width:unset; 
+        height: auto;
+        max-height: 20vh;
+        margin: 1vw;
+      }
+    </style>
+</head>
+
+<body style="color:white;background-color:#1e1e1e;" onload="codeAddress(this);" >
+<nav class="navbar navbar-expand-md navbar-dark" style="background-color:#1e1e1e;">
+  <a class="navbar-brand" href="#">Jibin Philip</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+  <ul class="navbar-nav">
+    <li class="nav-item active">
+      <a class="nav-link" onclick="showaboutme()" style="background-color: #4d4d4d;border-radius: 10px;">About Me</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" onclick="tocertifications()">Certifications</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" onclick="totech()">Technical Knowledge</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" onclick="toexperience()">Work Experience</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" onclick="toeducation()">Educational History</a>
+    </li>
+     <li class="nav-item">
+      <a class="nav-link" onclick="toprojects()">Projects</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" onclick="toskills()">Other Skills</a>
+    </li>
+  </ul>
+  </div>
+</nav>
+
+<div class="modal fade" id="aboutme" role="dialog">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content" style="background-color: #1e1e1e;"   >
+      <div class="modal-header">
+        <h4 class="modal-companyname"></h4>    
+        <button type="button" class="btn btn-secondary" onclick="hideaboutme();">Close</button>                 
+      </div>
+      
+      <div class="modal-body">
+        <div class="card" style="background-color: #111111;background-image: url('images/uiard_badge.png'); background-repeat: no-repeat;background-size: 20%;background-position: right bottom;background-blend-mode: lighten;justify-content: center;text-align: center;border-radius: 10px;">
+          <div class="text-center" style="margin-top: 2vh;margin-bottom: 2vh;">
+            <img class="img-thumbnail rounded" src="images/jibin.jpg" alt="Jibin Philip" style="width: 25%;" >
+          </div>
+          <h1>Jibin Philip</h1>
+          <p class="title">UiPath Certified Senior RPA Developer</p>
+          <div style="margin: 24px 0;">
+            <a href="mailto:jibinpphilip321@gmail.com"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+              <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
+            </svg></a>
+            <a href="https://in.linkedin.com/in/jibin-philip-132944153" style="padding-left: 2vw;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+              <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+            </svg></a> 
+            <a href="tel:+918301882656" style="padding-left: 2vw;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">
+              <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+            </svg></a>
+          </div>
+        </div> 
+        <table class="table table-dark" style="border-radius: 10px;">
+          <tbody>
+            <tr>
+              <th scope="row">Address</th>
+              <td>Pulumpelthakidiyil(H)</td>
+            </tr>
+            <tr>
+              <th scope="row">State</th>
+              <td>Kerala</td>
+            </tr>
+            <tr>
+              <th scope="row">Nationality</th>
+              <td>Indian</td>
+            </tr>
+            <tr>
+              <th scope="row">Marital Status</th>
+              <td>Single</td>
+            </tr>
+            <tr>
+              <th scope="row">Date of Birth</th>
+              <td>21<sup>st</sup> July 1998</td>
+            </tr>
+          </tbody>
+         </table>
+       </div> 
+    </div>
+  </div>
+</div>
+
+<div class="jumbotron text-left" style="background-color:#111111; height: max-content;" onmousewheel="moreinfo()">
+  <div class="container mt-2">    
+    <div class="d-flex mb-2 ">     
+      <div class="p-2 mr-auto">
+        <h1 >Hello, I am Jibin.</h1>
+        <p id="objective"></p></div>        
+      <div class="p-2">
+        <img src="images/me.png" alt="Jibin Philip" id="me" class="pull-right img-responsive" style="width:20vw;margin-right:-100vw;"></img>
+      </div>
+    </div>    
+  </div>
+  <div  class="jumbotron text-left" style="display: flex;background-color: #1e1e1e;">
+    <img src="images/uiard_logo.png" alt="UIARD Certified"  class="pull-left img-responsive" style="width:7vw;height:fit-content; margin-left: 10vw;" onmouseenter="sizeup(this);" onmouseout="sizedown(this);"></img>
+    <p id="uiard_test"></p>
+  </div>
+  <p id="more" style="text-align: center;" ></p>
+</div>
+
+<div class="container mt-2" id="certifications">
+  <h1 >Certifications and Awards</h1> 
+    <div class="d-flex mb-2 ">
+      <div class="p-2 mr-auto">
+        <button  class="btn btn-primary cert" id="uiard" onmouseenter="openModel(this);"> UiPath Certified Professional RPA Developer</button>
+        <button  class="btn btn-primary cert" onmouseenter="openModel(this);"> Diploma in UiPath Advanced RPA Developer</button>
+        <button  class="btn btn-primary cert" onmouseenter="openModel(this);"> Diploma in UiPath RPA Developer Foundation</button>
+        <button  class="btn btn-primary cert" onmouseenter="openModel(this);"> Diploma in UiPath RPA Solution Architect</button>
+        <button  class="btn btn-primary cert" onmouseenter="openModel(this);"> CareRevenue Special Recognition</button>
+     </div>
+    </div>
+    <div class="modal fade" id="PopUp" role="dialog"  onmousemove="closeModel(this);">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content" style="background-color: #1e1e1e;"   >
+          <div class="modal-header">
+            <h4 class="modal-title" id="certifcatename" >Certifications</h4>           
+          </div>
+          <div class="modal-body">
+            <img id="certificateimg" src="" style="width:100%"></img>
+          </div>          
+        </div>
+      </div>
+    </div>
+    <p style="text-align: left;"> Apart from the above mentioned RPA certfications , I also have multiple certifications and achievements from different e-learning platforms like Linkedin learning, ievolve of TCS etc.</p>
+</div>
+
+<div class="jumbotron text-left" style="background-color:#111111; height: max-content;" id="technical_knowledge">
+  <h1 style="text-align: center;">Technical Knowledge</h1>
+  <div style="color: white;">
+    <span>Advanced Level</span>
+    <div class="row" style="margin:2vw;">
+      <div class="col-1 tech" style="background-color:#4d4d4d;">UiPath</div>
+      <div class="col-1 tech" style="background-color:#1e1e1e;">.NET</div>
+      <div class="col-1 tech" style="background-color:#4d4d4d;">C</div>
+      <div class="col-1 tech" style="background-color:#1e1e1e;">C++</div>
+      <div class="col-2 tech" style="background-color:#4d4d4d;">Python</div>
+      <div class="col-2 tech" style="background-color:#1e1e1e;">Selenium</div>
+    </div>
+    <span>Intermediate Level</span>
+    <div class="row" style="margin:2vw;">      
+      <div class="col-1 tech" style="background-color:#1e1e1e;">Java</div>
+      <div class="col-1 tech" style="background-color:#4d4d4d;">HTML</div>
+      <div class="col-1 tech" style="background-color:#1e1e1e;">CSS</div>
+      <div class="col-2 tech" style="background-color:#4d4d4d;">Javascript</div>
+      <div class="col-2 tech" style="background-color:#1e1e1e;">ASP&nbsp;.NET&nbsp;MVC</div>  
+    </div>
+  </div>
+  <p style="text-align: center;">Even though I am graduated in Electrical and Electronics Technology , I always had an interest in programming and latest technologies. During my Graduation , I was into Android Application Development and have published muliple Applications in Playstore.</p>
+</div>
+
+<div class="jumbotron text-left" style="background-color:#1e1e1e;" id="experience">
+  <h1 style="text-align: center;margin-bottom: 4%;">Work Experience</h1>
+  <p style="text-align: left;">I have work experience in IT - Airways , IT - Logistics and Transport , IT - HealthCare Industries and IT - Finance industries and a lot of RPA projects in each Domain.</p>
+      <div class="row" style="justify-content: space-around;">
+          <div class="col-3 exp" id ="carerevenue"  onmouseenter="showexp(id);">
+               <div style="width: inherit;max-height: inherit;">
+                <img src="images/carerevenue.png" style="width: 215px;height:6vh;margin-top: 5vh;"></img>
+               <hr>
+               <p>From&nbsp;July&nbsp;2022</p>
+              </div>
+          </div>
+          <div class="col-3 exp" id ="tcs" onmouseenter="showexp(id);" >
+            <div style="width: inherit;max-height: inherit;">
+              <img src="images/tcs.png" style="width: 180px;height:8vh;margin-top: 3vh;"></img><hr>
+              <p>February&nbsp;2021&nbsp;to&nbsp;July&nbsp;2022</p>
+            </div>
+          </div>
+      </div>
+ </div>
+ 
+ <div class="modal fade" id="expPopcarerevenue" role="dialog" onmouseleave="hideexp(id);">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content" style="background-color: #1e1e1e;"   >
+      <div class="modal-header">
+        <h4 class="modal-companyname" >CareRevenue - Good Methods Technologies</h4>  
+        <button type="button" class="btn btn-secondary" onclick="hideexp();">Close</button>         
+      </div>
+      <div class="modal-body">
+       <p>Role: Senior RPA Developer and .NET Developer</p>
+       <ul class="list-group" >
+        <li class="list-group-item bg-dark">Develop new Automations and Support existing ones in UiPath</li>
+        <li class="list-group-item bg-dark">Led the Team for the Development of multiple complex projects as well as led the team for Operational Support</li>
+        <li class="list-group-item bg-dark">Find the Possibilities of New Automation and provide enchancements to existing Automations</li>
+        <li class="list-group-item bg-dark">Developed more than 15 Automations Independently and more than 5 projects working as a Team</li>
+        <li class="list-group-item bg-dark">Developed and Internal RPA Tool named Carebot, with an Orchestrator Cloud Platform working as a Team</li>
+        <li class="list-group-item bg-dark">Maintenance and Support for an Existsing ASP .NET MVC Web Application</li>
+        <li class="list-group-item bg-dark">Provide Support and Maintenance for Internal API's</li>
+        <li class="list-group-item bg-dark">Collecting Requirements from user and Create Solution Designs for new Automations</li>
+        <li class="list-group-item bg-dark">Documenting P.D.D, S.D.D, B.R.D, Handoff Document etc. </li>
+        <li class="list-group-item bg-dark">Worked with Google API's, MYSQL, SSMS, Python integrating with UiPath Automations</li>
+        <li class="list-group-item bg-dark">Develop .NET Console Applications for Automations in Selenium</li>
+        <li class="list-group-item bg-dark">Development of a Reporting Automation, which is scalable by user. The user can Add/Remove/Schedule Reports with Completely Customizable Email Notifications</li> 
+        <li class="list-group-item bg-dark">Better Colloboration and Interaction with other Development Teams</li>
+        <li class="list-group-item bg-dark">Experience in UiPath Cloud Apps</li>
+      </ul>
+      </div> 
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="expPoptcs" role="dialog" onmouseleave="hideexp(id);">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content" style="background-color: #1e1e1e;"   >
+      <div class="modal-header">
+        <h4 class="modal-companyname">Tata Consultancy Services</h4>    
+        <button type="button" class="btn btn-secondary" onclick="hideexp();">Close</button>                 
+      </div>
+      
+      <div class="modal-body">
+        <p>Role: RPA Developer</p>
+        <ul class="list-group" >
+         <li class="list-group-item bg-dark">Developed 3 complex large scale Automations and multiple simple Automations</li>
+         <li class="list-group-item bg-dark">Worked in a Team and Colloborated with Other Developers</li>
+         <li class="list-group-item bg-dark">Provide Support to live Automations during HyperCare</li>
+         <li class="list-group-item bg-dark">Automation Development with Microsoft Sharepoint,Outlook and other MS kits.</li>
+         <li class="list-group-item bg-dark">Developed Automations using API's from DELL and Service Now.</li>
+         <li class="list-group-item bg-dark">Worked in projects with AI Center,Document Understanding and forms</li>
+         <li class="list-group-item bg-dark">Preparing Documentations such as P.D.D, S.D.D and Handoff</li>
+         <li class="list-group-item bg-dark">Experience in working with Agile, Waterfall Methodolgies and in Azure DevOPs</li>
+       </ul>
+       </div> 
+      
+    </div>
+  </div>
+</div>
+<div class="jumbotron text-left" style="background-color:#111111;" id="education">
+  <h1 style="text-align: center;margin-bottom: 4%;">Educational History</h1>
+      <div class="row" style="justify-content: space-around;">
+          <div class="col-3 jumbotron" id ="cep" style="background-color:#4d4d4d;">
+               <div>
+                <b>B.Tech from College of Engineering, Poonjar</b>
+                <p>Graduated in 2020 with a C.G.PA of 7.8</p>
+              </div>
+          </div>
+          <div class="col-3 jumbotron" id ="thss" style="background-color:#1e1e1e;">
+            <div>
+              <b>Higher Seconday from Technical Higher Secondary School (I.H.R.D)</b>
+              <p>Major - Electronics</p>
+              <p>Secured 92 %</p>
+            </div>
+          </div>
+          <div class="col-3 jumbotron" id ="sjps" style="background-color:#4d4d4d;">
+            <div>
+              <b>Metrics from Shanthal Jyothi Public School</b>
+              <p>Passed with 82 %</p>
+            </div>
+          </div>
+      </div>
+ </div>
+ <div class="jumbotron text-left" style="background-color:#1e1e1e;" id="projects">
+  <h1 style="text-align: center;margin-bottom: 4%;">Projects</h1>
+      <div class="row" style="justify-content: space-around;">
+          <div class="col-2 jumbotron" style="background-color:#111111;">
+               <div>
+                <b>Airways : Crew Track Management</b>
+                <p>for JetBlue Airays - U.S | T.C.S</p>
+                <p>Tags : #Application Automation, #Excel Automation, #RE Framework</p>
+              </div>
+          </div>
+          <div class="col-2 jumbotron" style="background-color:#111111;">
+            <div>
+              <b>Logsitsics : Custom S.T Reconcilation</b>
+              <p>for Toll Group Australia | T.C.S</p>
+              <p>Tags : #Application Automation, #Excel Automation, #AI Center, #Forms, #DU Framework</p>
+            </div>
+          </div>
+          <div class="col-2 jumbotron" style="background-color:#111111;">
+            <div>
+              <b>Logsitsics : A.P Reconcilation</b>
+              <p>for Toll Group Australia | T.C.S</p>
+              <p>Tags : #Application Automation, #Excel Automation, #AI Center, #Forms, #DU Framework</p>
+            </div>
+          </div>
+          <div class="col-2 jumbotron" style="background-color:#111111;">
+            <div>
+              <b>Transport : Fuels PDI</b>
+              <p>for Toll Group Australia | T.C.S</p>
+              <o>Tags : #Web Automation, #Excel Automation, #Mail Automation</o>
+            </div>
+          </div>
+          <div class="col-2 jumbotron" style="background-color:#111111;">
+            <div>
+              <b>IT : OnBoarding IT Assets</b>
+              <p>for Toll Group Australia | T.C.S</p>
+              <o>Tags : #API Automation, #Excel Automation, #ServiceNow, #SharePoint, #Mail Automation</o>
+            </div>
+          </div>
+      </div>
+      <div class="row" style="justify-content: space-around;">
+          <div class="col-2 jumbotron" style="background-color:#111111;">
+            <div>
+            <b>Finance : Insurance Payment Automation</b>
+            <p>for CareRevenue</p>
+            <p>Tags : #Web Automation, #Excel Automation</p>
+          </div>
+          </div>
+          <div class="col-2 jumbotron" style="background-color:#111111;">
+            <div>
+            <b>HealthCare : Insurance Verification</b>
+            <p>for CareRevenue</p>
+            <p>Tags : #Web Automation, #Excel Automation</p>
+          </div>
+          </div>
+          <div class="col-2 jumbotron" style="background-color:#111111;">
+            <div>
+            <b>HealthCare : Insurance Web Scraping</b>
+            <p>for CareRevenue</p>
+            <p>Tags : #Web Automation, #Excel Automation</p>
+          </div>
+          </div>
+          <div class="col-2 jumbotron" style="background-color:#111111;">
+            <div>
+            <b>Reports : MIS Reports</b>
+            <p>for CareRevenue</p>
+            <p>Tags : #DB Scripting Automation, #Excel Automation</p>
+          </div>
+          </div>
+          <div class="col-2 jumbotron" style="background-color:#111111;">
+            <div>
+            <b>And 30+ Other Simple Automations</b>
+            <p>for CareRevenue</p>
+          </div>
+          </div>
+      </div>
+      <i style="text-align: center;">Can't Reveal Much Infromation due to security constraints</i>
+ </div>
+ <div class="jumbotron text-left" style="background-color:#111111;" id="experience">
+  <h1 style="text-align: center;margin-bottom: 4%;">Other Skills</h1>
+  <ul class="list-group" >
+   <li class="list-group-item" style="background-color:#1e1e1e;">Experience in Managing UiPath Orchestrator , Assets , Machines,Queues etc.</li>
+   <li class="list-group-item" style="background-color:#1e1e1e;">Good in Coding , RPA Troubleshooting, Debugging and HyperCare</li>
+   <li class="list-group-item" style="background-color:#1e1e1e;">Knowledge in Basics of Query Languages and Database</li>
+   <li class="list-group-item" style="background-color:#1e1e1e;">Experience in Android Studio- Designing and Building Native Applications</li>
+   <li class="list-group-item" style="background-color:#1e1e1e;">Basic Knowledge about Repositories like Github, Gitlab etc.</li>
+   <li class="list-group-item" style="background-color:#1e1e1e;">Experience in Excel,Word, Powerpoint and Other O365 Applications</li>
+   <li class="list-group-item" style="background-color:#1e1e1e;">Adobe Photoshop,Adobe Illustrator and other Graphics Tools</li>
+   <li class="list-group-item" style="background-color:#1e1e1e;">Experience in working with GSuite Applications</li>
+ </ul>
+ </div>
+</body>
+</html>
